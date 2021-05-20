@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            /* 
+            inline 성질인 한라인에 여러 tag 배치와
+            block의 성질인 width 설정을
+            모두 할수 있는 성질로 바꾸기
+            */
+            display: inline-block;
+            width: 20%;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        input {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <label>가나다라마바사</label><input>
+    </p>
+    <p>
+        <label>가나다</label><input>
+    </p>
+    <p>
+        <label>가나다라마</label><input>
+    </p>
+
+    
+</body>
+</html>

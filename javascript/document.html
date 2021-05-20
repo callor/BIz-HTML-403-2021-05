@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">대한민국만세</p>
+    <p id="p2">우리나라만세</p>
+    <p id="p3">Republic of Korea</p>
+</body>
+<script>
+
+    // 함수(method)를 선언하기
+    // click_func 이라는 함수를 선언한다
+    // 이 함수는 { ... } 코드를 실행한다
+    let click_p1 = function(ev) {
+        alert("안녕하세요");
+    }
+
+    // 옛날 방식의 함수 선언
+    function click_p2(ev) {
+        alert("p2를 클릭했군요");
+    }
+
+    // 현재 문서의 id가 p1인 p tag에
+    // click event 핸들러를 설정하겠다
+    // 보고있는 화면에서
+    // p#p1 tag를 클릭하면
+    // 함수 click_func을 실행하라    
+    document // 현재 문서에 있는
+    
+    // id 가 p1 인 p tag를 선택하여
+    .querySelector("p#p1") 
+
+    // click event를 설정(추가)하라
+    .addEventListener("click",click_p1);
+
+    // id가 p2인 tag가 클릭되면
+    // click_p2 함수를 실행하라
+    // call back 함수 지정방식
+    document
+    .querySelector("p#p2")
+    .addEventListener("click",click_p2);
+
+    /*
+    동기식(Sync) 코드 진행(실행) 방식
+    단순한 Console 프로젝트에서는
+    사용자의 입력에 따른 기능을 수행할때
+    입력이 제대로(코드에서 원하는대로) 될때깢
+    마냥 기다리고 있다가
+    또는 입력한 값을 검증하는 절차를 수행하다가
+    입력한 값대로 기능(코드)를 수행하는 방법을
+    사용한다
+    이러한 방식의 코드는
+    사용자의 입력 부분에서 멈추거나
+    무한 반복되는 코드가 작동된다
+    사용자는 다른 기능을 임의로 수행하고 싶어도
+    절차대로 수행될때까지 기다릴수 밖에 없다
+
+    식당에 서빙을 하는 직원이 1명일때
+    손님이 입장을 하면
+    주문을 받고, 주방에 전달하고, 음식이 나오면
+    음식을 테이블에 세팅하고
+    손님이 음식을 다 먹으면, 계산을 하고
+    손님이 퇴장을 하면 업무가 완료된다
+
+    이때 중간에 손님이 또 입장을 하면
+    처음 손님이 퇴장을 할때까지
+    마냥 기다려야 된다.
+
+    웹 프로젝트와 같은 다중(여러사람)이 사용하는
+    업무 환경에서는 이러한 방식으로 처리하려면
+    서빙하는 직원이 들어오는 손님 수 만큼
+    있어야하는 상황이 발생한다.
+
+
+    이러한 단점을 보완하기 위해서
+    비동기 방식이 탄생했다
+
+    미리
+    사용자(Web Brower를 보고 있는)가
+    할일을 예측하고 그 일에 대한 사항을
+    "이벤트 핸들러(이벤트 처리 코드)" 라는 
+    방식으로 코드를 작성(등록, add)해 둔다
+
+    웹 화면은 보여주는일 등등 원래 지정된
+    일을 수행하다가
+
+    사용자가 미리 등록된 이벤트를 일으키면
+    이벤트 핸들러 코드를 수행하여
+    또다른 업무를 수행하게 된다.
+
+    테이블이 여러개인 식당에 한명의 직원이
+    서빙을 하는 일반적인 형태와 유사
+
+    첫번째 손님에게 주문을 받고,
+    주방에 전달하고, 음식이 만들어지는 동안
+    두번재 손님에게 다른 주문을 받고
+    주방에 전달하고
+    만약 이때 첫번째 손님이 음식을 다 먹고
+    계산을 하려고 하면 계산대에서 계산을 한다
+
+    전체적인 순서는 있지만
+    이벤트에 따라 순서가 바뀌어서 실행되기도 한다
+
+    */
+
+    document
+    .querySelector("p#p3")
+    .addEventListener("mouseover",function(ev){
+        // alert("p3 에 마우스 올려짐")
+        ev.target.textContent = "반갑습니다"
+        ev.target.style.backgroundColor = "blue";
+        ev.target.style.color = "yellow";
+    })
+    document
+    .querySelector("p#p3")
+    .addEventListener("mouseout",function(ev){
+        // alert("p3 에 마우스 올려짐")
+        ev.target.textContent = "Republic of Korea"
+    })
+
+
+</script>
+</html>
