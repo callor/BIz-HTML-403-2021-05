@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div#d_main {
+        width: 80%;
+        margin: 0px auto;
+        background-color: green;
+        padding: 10px;
+      }
+
+      div#d_sub_1 {
+        width: 80%;
+        margin: 30px auto;
+        background-color: blue;
+        padding: 10px;
+      }
+
+      div#d_sub_1 p {
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+        background-color: brown;
+        padding: 0.5rem;
+      }
+    </style>
+    <script>
+      /*
+        int num1 = 40;
+        System.out.println(num1);
+
+        System.out.println(num2);
+        int num2 = 50;
+        */
+
+      /*
+        HTML의 각 요소가 화면에 그려지기 전에는
+        아무리 Selector를 수행하고
+        event를 Add해도 소용이 없다
+        
+        때문에
+        document 객체에 event를 먼저 설정하는데
+        화면에 모든 요소가 정상적으로
+        작동된 후에 
+        다른 요소에 event가 설정되도록 만든다
+        */
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelector("div#d_sub_1")
+          .addEventListener("click", function (ev) {
+            // alert("나는 파란 빡스 입니다")
+            let text = ev.target.textContent;
+            // let message = String.format("나는 %s 입니다",text)
+            alert("나는 " + text + " 입니다");
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="d_main">
+      <div id="d_sub_1">
+        <p>대한민국</p>
+        <p>우리나라</p>
+        <p>Republic of Korea</p>
+        <p>Today</p>
+        <p>yester Day</p>
+        <ul>
+          <li>가</li>
+          <li>나</li>
+          <li>다</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

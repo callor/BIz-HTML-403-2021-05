@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#d_main {
+            width: 80%;
+            margin:0px auto;
+            background-color: green;
+            padding:10px;
+        }
+
+        div#d_sub_1 {
+            width: 80%;
+            margin:30px auto;
+            background-color: blue;
+            padding:10px;
+        }
+
+        div#d_sub_1 p {
+            width: 80%;
+            margin:20px auto;
+            text-align: center;
+            background-color: brown;
+            padding:0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="d_main">
+        <div id="d_sub_1">
+            <p>대한민국</p>
+            <p>우리나라</p>
+            <p>Republic of Korea</p>
+        </div>
+    </div>
+</body>
+<script>
+
+    // 현재 화면에 p tag가 1개 뿐이기 때문에
+    // Selector()를 사용하여 선택해도 된다
+    //      SelectorAll() 전체를 배열로 가져오기
+    //      Selector(tag) : 처음으로 나타는 요소만
+    document.querySelector("p")
+    .addEventListener("click",function(ev){
+        alert("나는 P tag 입니다")
+    })
+
+    document.querySelector("div#d_sub_1")
+    .addEventListener("click",function(ev) {
+        alert("나는 파란 빡스 입니다")
+    })
+
+    document.querySelector("div#d_main")
+    .addEventListener("click",function(ev){
+        alert("나는 녹색 Box 입니다")
+    })
+
+</script>
+</html>
