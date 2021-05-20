@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        px : pixel
+        화면의 해상도에 따라서 크기등이 결정되는 단위
+        FHD(1080p) : 1920px * 1080px
+        WHD(QHD) :  2160px * 1920px
+        UHD 4K : 3840px * 2160px
+        */
+
+        p {
+            height: 20px;
+            margin:10px;
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">P1</p>
+    <p id="p2">P2</p>
+    <p id="p3">P3</p>
+</body>
+<script>
+    /*
+    js(Java script)를 사용한 event 핸들링
+    */
+
+    // selector
+    // tags, id, classes
+
+    //1. id 로 선택하기(id selector)
+    //  결과가 (0 ~ )1개만 있다
+    document.querySelector("p#p1");
+    document.getElementById("p1");
+
+    //2. tags 로 선택하기
+    //  결과가 여러개 있다
+    //  배열결과가 생성된다
+    document.querySelector("p");
+    document.getElementsByTagName("p");
+
+    //3. classes로 선택하기
+    // 결과가 여러개 있다
+    // 배열결과가 생성된다
+    document.querySelector(".pclass");
+    document.getElementsByClassName("pclass");
+
+    // 지정된 selector에 event 추가하기
+
+    // 직접 selector에 event 핸들러를 지정하기
+    document.querySelector("#p1")
+    .addEventListener("click",function(ev){
+        alert("반갑습니다");
+    })
+
+    // p tag 들을 selector(선택하기)
+    // 선택된 결과를 ptags라는 변수에 담기
+
+    // p tag 요소들 전부를 ptags 라는 변수에 담기
+    // 이때 ptags는 배열요소이다
+    let ptags = document.querySelectorAll("p");
+
+    // tags와 classes는 같은 이름의 요소가
+    // 다수 있을 수 있기 때문에
+    // event 핸들러를 등록하기 위해서는
+    // 배열을 사용하여 등록해야 한다.
+
+    // 생성된 ptags 배열을 반복 순회 하면서
+    // 각각 요소에 click event를 설정하기
+    for(let i = 0 ; i < ptags.length ; i++) {
+        ptags[i]
+        .addEventListener("click",
+            function(ev){
+                let text = ev.currentTarget.textContent
+                alert(text)
+            }
+        )
+    }
+
+    /*
+    현재 문서(Document)의 다수의 p tag 
+    같은 event 핸들러를 등록했지만
+    실제 작동될때믄
+    클릭한 p tag에서만 event 가 발생하고
+    event 가 발생한 p tag의 text를 alert 한다
+    */
+
+
+
+</script>
+</html>
