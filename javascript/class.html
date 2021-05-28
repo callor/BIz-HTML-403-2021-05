@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        border: 1px solid blue;
+        padding: 2rem;
+        margin: 10px;
+      }
+
+      .through-text {
+        background-color: yellow;
+        text-decoration: line-through red;
+      }
+    </style>
+    <script>
+      // document가 모두 완성되면
+      // DOMContentLoaded Event는
+      // 화면에 HTML로 만든 요소가
+      // 모두 그려진 후에 실행되는 코드
+      //  이 항목이 없으면
+      //  각 요소에 설정하는 event를 적용하기 위하여
+      //  script 코드가 항상 HTML 문서의 끝에
+      //  위치해야 한다.
+      // 이 event로 인해서 script의 위치에 관계없이
+      // 요소에 적절한 event를 설정할수 있다
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .querySelector("div.main")
+          // function(e) { }
+          // (e)=>{ } : 화살표 함수
+          .addEventListener("dblclick", (e) => {
+            let text = e.target.textContent;
+            // alert(text);
+            // div 내부에서 선택된 tag의
+            // 바탕색을 red로 설정하라
+            // e.target.style.backgroundColor = "red";
+            // e.target.style.textDecoration = "line-through";
+
+            // e.target = p tag
+            // 최초에는 className = '' 상태이다
+            let className = e.target.className;
+            // alert(className);
+
+            // className이 '' 인 상태는
+            // if 등 비교연산자 연산을 하면
+            // 그 값은 false 이다
+            // 만약 className 이 '' 이 아니면
+            // 즉 어떤 문자열이 담겨있으면
+            // if 등 비교연산자 연산에서는
+            //  결과가 true가 된다
+
+            /*
+            div.main을 더블클릭하면
+            div가 감싸고 있는 p tag들에게 동시에
+            더블클릭이 전달된다
+            설정된 더블클릭 이벤트에서
+            e.target은 div가 감싸고 있는 p tag중에
+            한개가 된다.
+
+            결국 div.main이 감싸고 있는 
+            세개의 p tag에 더블클릭 이벤트를
+            설정한 것과 같은 결과가 된다.
+
+            p tag가 클릭되면
+            클릭된 p tag의 클래스이름을 검사하여
+            클래스 이름이 '' 이면
+            p tag에 throgh-text 라는 클래스를 지정하고
+            그렇지 않으면('' 이 아니면)
+            p tag에 '' 이라는 클래스를 지정하여
+            클래스를 제거한다
+
+            p tag에 throuth-text 클래스가 지정되면
+            style에 미리 설정해 놓은
+            .throgh-text 클래스의 속성이
+            p tag 에 적용된다.
+            */
+            className = className ? "" : "through-text";
+            e.target.className = className;
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <p id="p1">우리나라만세</p>
+      <p id="p2">대한민국만세</p>
+      <p id="p3">Republic of Korea</p>
+    </div>
+  </body>
+</html>
