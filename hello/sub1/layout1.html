@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내비게이션</title>
+    <style>
+      nav {
+        background-color: blue;
+      }
+      /*
+        ul > li tag를 사용하여 내비구현
+        li tag는 기본속성이 block 형이다
+        li tag를 한라인에 배치하여 nav로 사용하기 위하여
+        li tag의 속성을 inline-block으로 설정한다
+
+        내부에 a tag가 있을경우 color를 바탕색과
+        대비되는 색상으로 설정
+        */
+      nav ul li {
+        display: inline-block;
+        color: white;
+        padding: 5px;
+      }
+      /*
+      li tag의 color를 white로 지정했지만
+      a tag는 속성상 별도로 컬러를 지정하지 않으면
+      청색계열로 표현된다
+
+      따라서 color를 실제 nav의 바탕색과
+      대비되는 색으로 변경을 해줄수 있다.
+
+      하지만, nav의 방색을 다른 색으로 변경하는
+      경우도 있기때문에
+      nav의 바탕색과 a tag의 color를 변경하는 것은
+      번거로운 작업이 된다.
+      nav에서 바탕색과 color를 변경하고
+      a tag에서 상속받아 색을 지정하는 방식이 
+      유지보수 면에서 유리한다
+      보통 a tag 의 color 를 inherit로 설정한ㄷ
+
+      nav에 표현되는 각 항목의 폭과 높이를 
+      조절하고자 할때 nav, ul, li tag를 직접 변경하지 않고
+      a tag의 padding을 설정하여 만드는 것이
+      보기에 좋은 모양이 된다
+
+      a tag에 폭이나 높이를 설정하기 위하여
+      a tag를 inline-block으로 설정하자
+      nav에서 사용하는 a tag는 밑을을 제거하자
+      */
+      nav ul li a {
+        color: inherit; /* 컬러 상속받기 */
+        display: inline-block; /* 폭과 높이 조절가능하게 */
+        padding: 5px;
+        text-decoration: none; /* 밑줄 제거 */
+      }
+
+      nav li:hover {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>내비게이션</h1>
+      <p>UL tag를 사용한 내비게이션 구현</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">홈으로</a></li>
+        <li><a href="#">공지사항</a></li>
+        <li><a href="#">자유게시판</a></li>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

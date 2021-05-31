@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      nav#main_nav {
+        background-color: black;
+        color: white;
+      }
+      nav#main_nav li {
+        display: inline-block;
+        padding: 5px;
+        /* 
+        hover에서 3px under bar를 표시했더니
+        nav 전체가 출렁거리는 현상이 발생했다
+        hover가 되기전 box에 transparent(투명색)으로
+        같은 크기의 under bar를 미리 생성해 둔다
+        */
+        border-bottom: 3px solid transparent;
+        /*
+        동적 모양 딜레이를 설정하여
+        에니메이션 효과를 주기
+        */
+        transition: all 0.9s;
+      }
+      nav#main_nav li:hover {
+        border-bottom: 3px solid yellow;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>UL tag를 사용하여 nav 만들기</h1>
+    </header>
+    <nav id="main_nav">
+      <ul>
+        <li>Home</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+  </body>
+</html>
