@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /* 일부 브라우저에서 지원이 되지 않는다 */
+      /* flex와 비슷한 성질로 내부 요소를
+      inline 으로 배치하고자 할때 사용 */
+      body {
+        display: grid;
+        /* 
+        한 라인에 배치할 요소들의 개수와
+        폭을 지정하여 설정하기
+        */
+        grid-template-columns: 100px 100px 100px 100px 100px;
+        grid-gap: 10px;
+      }
+
+      div {
+        margin: 10px;
+        padding: 2rem;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      /*
+      float 속성
+      원래는 이미지와 text의 조합을 위해서
+      사용하는 속성이었다
+
+      어떤 경로로 인하여
+      block 형 tag를 한 라인에 배치하기 위하여
+      변형적으로 사용을 했었다
+
+      상당히 많은 이슈가 있어서 최근에는
+      사용하지 않는다.
+      */
+      div {
+        width: 100px;
+        border: 1px solid green;
+        margin: 5px;
+        padding: 2rem;
+        float: left;
+      }
+
+      div#d1 {
+        background-color: yellow;
+      }
+
+      div#d2 {
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">1</div>
+    <div id="d2">2</div>
+    <div id="d3">3</div>
+    <div id="d4">4</div>
+    <div id="d5">5</div>
+  </body>
+</html>

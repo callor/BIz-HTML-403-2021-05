@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /*
+        display : flex로 설정을 하면
+        이 박스가 감싸는 요소는 inline-flex 로
+        자동 설정이 된다
+        flex Box로 설정된 요소들은
+        자연스럽게 width에 따라 가로 방향으로 배치된다
+
+        display : flex 로 설정된 article은
+        flex container 라고 한다.
+
+        */
+      article {
+        display: flex;
+        /* 
+        화면에 크기에 따라 요소들이 
+        자동 줄바꿈 
+        */
+        flex-wrap: nowrap;
+        flex-wrap: wrap;
+      }
+
+      div {
+        width: 100px;
+        border: 1px solid red;
+        margin: 5px;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </article>
+  </body>
+</html>

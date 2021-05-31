@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      div {
+        display: inline-block;
+        width: 25%;
+        border: 1px solid green;
+        margin: 10px;
+      }
+
+      /* 
+      img를 포함하는 box의 overflow를 설정
+      hidden : 이미지를 자르기
+      scroll : 강제로(항상) 스크롤바를 보여주고
+            box내에서 이미 확인
+      auto : 이미지가 box보다 크면 scroll을 보이고
+            그렇지 않으면 평소처럼 보이기
+      */
+
+      div#div1 {
+        overflow: hidden;
+      }
+
+      div#div2 {
+        overflow: scroll;
+      }
+
+      div#div3 {
+        overflow: auto;
+      }
+
+      img {
+        width: 500px;
+      }
+
+      /*
+      img tag에 float 속성을 부여하면
+      이후에 있는 본문이 이미지 주변을
+      흐르는 것처럼 배치가 된다.
+      */
+      div#div4 img {
+        width: 100px;
+        float: left;
+        margin: 10px;
+      }
+
+      div#div5 img {
+        width: 100px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <img src="../2021.jpeg" alt="2021이미지" />
+    </div>
+    <div id="div2">
+      <img src="../2021.jpeg" alt="2021이미지" />
+    </div>
+    <div id="div3">
+      <img src="../2021.jpeg" alt="2021이미지" />
+    </div>
+    <div id="div4">
+      <img src="../2021.jpeg" width="50px" alt="2021이미지" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+        aspernatur suscipit debitis, cumque consequatur temporibus minima
+        obcaecati rerum accusamus quidem dolorum non nisi aut ipsum amet
+        quisquam natus quam ipsam.
+      </p>
+    </div>
+    <div id="div5">
+      <img src="../2021.jpeg" width="50px" alt="2021이미지" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+        aspernatur suscipit debitis, cumque consequatur temporibus minima
+        obcaecati rerum accusamus quidem dolorum non nisi aut ipsum amet
+        quisquam natus quam ipsam.
+      </p>
+    </div>
+  </body>
+</html>
