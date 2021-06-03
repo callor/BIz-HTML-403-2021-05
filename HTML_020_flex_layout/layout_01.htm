@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout 01</title>
+    <style>
+      div {
+        border: 1px solid blue;
+        margin: 5px;
+        width: 300px;
+      }
+
+      div.box {
+        float: left;
+      }
+
+      p {
+        clear: left;
+      }
+
+      div.inline {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex 를 이용한 화면 구현</h1>
+    <p>초창기 HTML은 위에서 아래방향으로 진행되는 Layout이 주를 이뤘다</p>
+    <p>가로방향으로 Content를 배열하는 layout 필요하게 된다</p>
+    <p>여러가지 Hack(Tip)들이 등장을하고 다양한 방법이 동원된다</p>
+    <p>표준 HTML 사용법과는 다소 거리가 있어서</p>
+    <p>여러가지 문제들을 일으키고</p>
+    <p>원하는대로 Layout이 만들어지지 않았다</p>
+    <p>대표적인 방법으로 div box를 floatting하여 배열하는 방법이</p>
+    <p>사용되었다</p>
+    <div class="box">대표적인 box model</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <p>우리나라만세</p>
+    <p>box model tag를 float로 설정을 하면</p>
+    <p>box width에 따라 화면에서 한라인에</p>
+    <p>여러 tag를 배열할수 있다</p>
+    <p>그런 float로 만든 layout은</p>
+    <p>floating되기를 원하지 않는 tag에 까지</p>
+    <p>영향을 미치게 된다</p>
+
+    <h3>inline-block</h3>
+    <p>float을 사용하여 layout을 구성하던</p>
+    <p>HTML 디자이너 들에게 반가운 소식이 전해진다</p>
+    <p>HTML5의 표준에 box model을 변경할수 있는 속성이</p>
+    <p>추가된다</p>
+    <h4>display 속성</h4>
+    <p>기본적인 box model을 변형(변경)하여 적용할수 있속성</p>
+    <p>block -> inline</p>
+    <p>inline -> block</p>
+    <p>div tag에 display를 inline으로 설정했더니</p>
+    <p>갑자기 block 성질을 버리고 한 라인에</p>
+    <p>여러개의 box를 배열할수 있게 되었다</p>
+    <p>그런데 inline 속성은</p>
+    <p>box의 width를 설정할수 없다.</p>
+    <p>다행히 inline 속에서 block의 성질을 포함한</p>
+    <p>inline-block 속성값이 추가된다</p>
+    <p>드디어 div box를 사용하여</p>
+    <p>원하는대로 width를 설정하고</p>
+    <p>한 라인에 여러 박스를 배치할수 있게 되었다</p>
+    <div class="inline">1</div>
+    <div class="inline">2</div>
+    <div class="inline">3</div>
+  </body>
+</html>

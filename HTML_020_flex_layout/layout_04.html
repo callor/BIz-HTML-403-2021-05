@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      section {
+        border: 1px solid green;
+        display: flex;
+      }
+      article {
+        /* grow, shrink, basis */
+        flex: 1 1 auto;
+        /* content(text)가 없더라도 좌우를 최대로 크게 */
+        /* 1 : 최대크기 0 : 최소크기 */
+        flex-grow: 1;
+
+        /* content가 없으면 축소하라 */
+        flex-shrink: 0;
+
+        /* 아이템의 초기 설정값을 자동으로 설정하라 */
+        /* 
+        basis 값을 auto가 아닌 임의의 값을 설정하면
+        box의 width값이 무시되기도 한다
+        */
+        flex-basis: auto;
+
+        border: 1px solid blue;
+        height: 100px;
+
+        display: flex;
+        /*
+        box에 box를 포함하면서
+        내부 box를 바깥쪽 box의 상하좌우 중아에
+        배치하고자 할때
+        다른방식으로는 매우 어렵다
+        과거에는 JS 코드를 사용하지 않으면
+        거의 불가능했다
+
+        container를 flex로 변경하고
+        justify-content를 center로
+        align-items를 center 로 설정하면
+        다른 속성 설정없이 매우 편리하게 
+        중앙에 배치할 수 있다
+
+        */
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        padding: 20px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <p>대한민국만세</p>
+        <p>우리나라만세</p>
+      </article>
+    </section>
+  </body>
+</html>

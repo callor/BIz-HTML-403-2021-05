@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+      }
+
+      nav {
+        vertical-align: top;
+        border: 1px solid red;
+        padding: 0;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav li {
+        border-bottom: 1px solid green;
+        padding: 5px;
+      }
+
+      nav li:hover {
+        background-color: #ddd;
+        cursor: pointer;
+      }
+
+      section {
+        flex: 1;
+        border: 1px solid blue;
+        padding: 10px;
+      }
+
+      article {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>HOME</li>
+        <li>회사소개</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+        dolore dolores temporibus ea praesentium ut, veritatis enim porro magnam
+        accusamus sed. Quidem libero, nisi commodi ipsam ad quos nulla odit!
+      </article>
+      <article>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis eum
+        eaque error. Ea tempora facilis placeat amet necessitatibus, corporis
+        expedita consectetur reiciendis quo architecto sit, aut doloribus saepe
+        reprehenderit rem!
+      </article>
+    </section>
+  </body>
+</html>
