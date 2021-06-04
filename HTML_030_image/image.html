@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 다루기</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid green;
+      }
+      div.img1 img {
+        width: 50%;
+      }
+      div.img2 img {
+        width: 50%;
+        /* 
+        img에 float 적용하기 
+        img에 float을 적용하면
+        이후에 p tag등으로 작성한 text를
+        image 주변에 흐르듯이 표현할수 있다
+        */
+        float: left;
+        margin: 5px;
+      }
+
+      div.img3 img {
+        width: 100%;
+        height: 50%;
+      }
+      div.img4 {
+        /* 
+          image를 box 만큼만 보여주고
+          나머지는 잘라버리기
+          */
+        overflow: hidden;
+      }
+
+      div.img5 {
+        /*
+          overflow:scroll과 비슷한 효과를 내며
+          이미지를 박스 크기만큼만 보여주고
+          scroll 막대를 표시하여
+          화면에서 scroll을 하면서 보여주기
+
+          overflow:scroll은 이미지 크기에 관계없이
+          항상 scroll 막대 표시
+          overflow:auto 는 이미지가 작으면 
+                그냥이미지만보이고
+           이미지가 크면 scroll 막대 보이기
+          */
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>HTML에서 이미지 다루기</h2>
+    <p>img tag를 사용하여 이미지 표현</p>
+    <div class="img1">
+      <img src="images_1.jpg" width="100%" />
+      <p>img tag에 이미지 소스(src)를 지정하고 width를 지정하는 방법</p>
+    </div>
+    <div class="img2">
+      <img src="images_2.jpg" alt="image2" />
+      <p>img tag에 이미지 소스(src)를 지정하고 alt지정하기</p>
+    </div>
+    <div class="img3">
+      <img src="images_3.jpg" alt="image2" />
+      <p>
+        img tag에 이미지 소스(src)를 지정하고 width와 height 지정하기
+        alt지정하기
+      </p>
+    </div>
+    <div class="img4">
+      <img src="images_4.jpg" alt="image2" />
+      <p>imgage를 감싸는 container에 효과주기</p>
+    </div>
+    <div class="img5">
+      <img src="images_5.jpg" alt="image2" />
+      <p>imgage를 감싸는 container에 효과주기</p>
+    </div>
+  </body>
+</html>
