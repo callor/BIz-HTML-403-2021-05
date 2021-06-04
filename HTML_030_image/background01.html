@@ -16,20 +16,133 @@
         height: 200px;
         margin: 5px;
         border: 1px solid green;
+        color: white;
+        font-size: 40px;
+
+        /*
+        hover 속성이 적용된 tag에
+        평상시 모양사 hover 모양이 변할때
+        딜레이를 수행하는 속성
+        */
+        transition: 1s;
       }
 
       div.b1 {
+        /* 
+        이미지 크기에 관계없이 box 영역 만큼만
+        보여주기
+        */
         background-image: url("images_3.jpg");
+      }
+      div.b2 {
+        /*
+        background-size 를 지정하면
+        box 크기에 비례하여 표현 가능
+        */
+        background-image: url("images_3.jpg");
+        /* width height */
+        background-size: 100% 100%;
+      }
+      div.b3 {
+        background-image: url("images_3.jpg");
+        background-size: 50% 100%;
+      }
+      div.b4 {
+        background-image: url("images_3.jpg");
+        background-size: 100% 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div.b4 img {
+        border-radius: 30%;
+      }
+
+      div.b5 {
+        background-image: url("images_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+      }
+      div.b6 {
+        background-image: url("images_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+        /* x 축으로 얼마 위치에 y축으로 얼마위치에 */
+        background-position: 50% 50%;
+      }
+      div.b7 {
+        background-image: url("images_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+        /* x 축으로 얼마 위치에 y축으로 얼마위치에 */
+
+        /*
+        0% 100% : 
+
+        */
+        background-position: 100% 50%;
+      }
+      div.b7 {
+        background-image: url("images_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+
+        /* x 축으로 얼마 위치에 y축으로 얼마위치에 */
+        /* CSS3에 지원되는 속성 */
+        background-position: 0% 100%;
+        background-position: 100% 0%;
+      }
+      /*
+      background-imagae의 width를 20%로 설정하고
+      hover가 되면 다시 width를 100%로 변경하도록
+      설정해 둔다
+
+      그리고 transition값을 부여하면
+      부드럽게 움직이는 애니메이션 효과를 낼수 있다
+
+      */
+      div.b8 {
+        background-image: url("images_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 20% 100%;
+
+        /* x 축으로 얼마 위치에 y축으로 얼마위치에 */
+        /* CSS3에 지원되는 속성 */
+        background-position: center;
+      }
+
+      div.b8:hover {
+        background-size: 100% 100%;
+      }
+      div.b9 {
+        background-image: url("images_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        /* x 축으로 얼마 위치에 y축으로 얼마위치에 */
+        /* CSS3에 지원되는 속성 */
+        background-position: center;
+      }
+
+      div.b9:hover {
+        background-size: 20% 100%;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="b1"></div>
-      <div class="b2"></div>
-      <div class="b3"></div>
-      <div class="b4"></div>
+      <div class="b1">우리나라만세</div>
+      <div class="b2">대한민국만세</div>
+      <div class="b3">Republic of Korea</div>
+      <div class="b4">
+        <img src="images_4.jpg" width="50%" height="50%" />
+      </div>
       <div class="b5"></div>
+      <div class="b6"></div>
+      <div class="b7"></div>
+      <div class="b8"></div>
+      <div class="b9"></div>
     </div>
   </body>
 </html>
