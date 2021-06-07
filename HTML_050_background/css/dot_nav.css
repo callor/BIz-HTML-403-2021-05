@@ -1,0 +1,32 @@
+nav#dot_nav {
+  position: fixed;
+  /* 
+  box 의 오른쪽 끝을 화면의 오른쪽으로 부터 40px만큼
+  떨어지게 배치
+ */
+  right: 40px;
+
+  top: 50%;
+}
+
+nav#dot_nav li {
+  width: 17px;
+  height: 17px;
+  /* relative 속성은 기본적으로 아무런 효과가 없는 속성이다 */
+  /* 
+  단 이 box가 포함하고 있는 내부의 box들에
+  absolute속성을 사용하기 위하여 지정해 한다
+  */
+  position: relative;
+  margin: 16px 7px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+nav#dot_nav li span {
+  color: white;
+  opacity: 0;
+
+  /* relative로 설정된 box에 대하여 절대 위치 */
+  position: absolute;
+}

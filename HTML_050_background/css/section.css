@@ -1,0 +1,75 @@
+section#contents {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  overflow: hidden;
+}
+
+section#contents article {
+  /*
+        화면에 box를 표현할때
+        width, height등을 사용한다
+        보통은 %, px 단위를 사용한다
+        width값은 100% 등 % 단위의 설정이 쉽다
+        height값은 % 단위의 설정이 다소 까다로웠다
+        vh wh 라는 단위가 나오면서
+            % 단위의 단점을 보완 하고 있다
+            vh : view port height 의 비례
+            wh : view port width 의 비례
+            화면의 해상도와 관계없이
+            보있는 화면 그대로의 모습의 비례
+      */
+  height: 100vh;
+  /* 
+    글자(Text)의 height를 
+    view port 100%로 설정 
+    text-aligh : 가로방향 정렬
+    vertical-align : 세로방향 정렬
+        text의 font, style에 따라서 상당이
+        불편한 설정이 된다
+    
+        세로방향으로 text를 중앙에 위치하기가
+        상당히 번거로운 작업이 필요했다
+        box의 중앙에 한라인의 text를 위치하고 싶을때는
+        line-height를 box의 크기만큼 설정해주면
+        text가 box 세로 중앙에 위치하더라
+    */
+  line-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+article#art1 {
+  background: url("../images/images_7.jpg") no-repeat;
+  background-image: url("../images/images_7.jpg");
+  background-repeat: no-repeat;
+}
+article#art2 {
+  background: url("../images/images_2.jpg") no-repeat;
+}
+article#art3 {
+  background: url("../images/images_3.jpg") no-repeat;
+}
+article#art4 {
+  background: url("../images/images_4.jpg") no-repeat;
+}
+article#art5 {
+  background: url("../images/images_5.jpg") no-repeat;
+}
+article#art6 {
+  background: url("../images/images_6.jpg") no-repeat;
+}
+
+@media screen and (max-width: 1000px) {
+  section#contents {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 800px) {
+  section#contents {
+    font-size: 30px;
+  }
+}
