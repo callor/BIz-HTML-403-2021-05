@@ -45,11 +45,26 @@ nav#dot_nav li span {
   /* span tag를 감싸고 있는 li tag 기준으로 */
   /* 왼쪽에 글자가 나타나도록 위치 조정 */
   right: 35px;
-  top: -5;
+  top: -15;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 7px 10px 5px 10px;
   border-radius: 7px;
   transition: all 0.3s ease;
+}
+
+/* 
+마치 span tag다음에 빈 공간에 가상의 
+content가 있는 것처럼
+설정 하기 
+*/
+nav#dot_nav li span:after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 8px;
+  border-left: 7px solid rgba(0, 0, 0, 0.5);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
 }
 
 nav#dot_nav li.active span {

@@ -43,24 +43,24 @@ section#contents article {
 }
 
 article#art1 {
-  background: url("../images/images_7.jpg") no-repeat;
-  background-image: url("../images/images_7.jpg");
+  background: url("../images/parallax_01.jpg") no-repeat;
+  background-image: url("../images/parallax_01.jpg");
   background-repeat: no-repeat;
 }
 article#art2 {
-  background: url("../images/images_2.jpg") no-repeat;
+  background: url("../images/parallax_02.jpg") no-repeat;
 }
 article#art3 {
-  background: url("../images/images_3.jpg") no-repeat;
+  background: url("../images/parallax_03.jpg") no-repeat;
 }
 article#art4 {
-  background: url("../images/images_4.jpg") no-repeat;
+  background: url("../images/parallax_04.jpg") no-repeat;
 }
 article#art5 {
-  background: url("../images/images_5.jpg") no-repeat;
+  background: url("../images/parallax_05.jpg") no-repeat;
 }
 article#art6 {
-  background: url("../images/images_6.jpg") no-repeat;
+  background: url("../images/parallax_06.jpg") no-repeat;
 }
 
 @media screen and (max-width: 1000px) {
