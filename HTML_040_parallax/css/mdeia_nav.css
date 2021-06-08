@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   nav#main_nav div.menu_toggle {
     display: block;
   }
