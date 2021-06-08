@@ -1,0 +1,58 @@
+nav#dot_nav {
+  position: fixed;
+  /* 
+  box 의 오른쪽 끝을 화면의 오른쪽으로 부터 40px만큼
+  떨어지게 배치
+ */
+  right: 40px;
+
+  /*
+  nav box를 position을 fixed로 설정하고
+  top:50%로 지정하면 box의 상단 부분이
+  view port의 위에서 50% 위치에 고정
+  box height만큼 아래쪽으로 치우치는 모양이 된다
+  */
+  top: 50%;
+  /* box 이동하는 애니메이션 구현체 */
+  /* translateY(-50%) : y축으로 자신의 높이의 50%만 - 이동 */
+  transform: translateY(-50%);
+}
+
+nav#dot_nav li {
+  width: 17px;
+  height: 17px;
+  /* relative 속성은 기본적으로 아무런 효과가 없는 속성이다 */
+  /* 
+  단 이 box가 포함하고 있는 내부의 box들에
+  absolute속성을 사용하기 위하여 지정해 한다
+  */
+  position: relative;
+  margin: 16px 7px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 1px black;
+  border-radius: 50%;
+}
+
+nav#dot_nav li span {
+  color: white;
+  /* Content 색상의 투명도 설정 */
+  /* 0 ~ 1까지 소수점 단위로 가능 */
+  opacity: 0;
+
+  /* relative로 설정된 box에 대하여 절대 위치 */
+  position: absolute;
+  /* 오른쪽에서 35px만큼 떨어진 위치 */
+  /* span tag를 감싸고 있는 li tag 기준으로 */
+  /* 왼쪽에 글자가 나타나도록 위치 조정 */
+  right: 35px;
+  top: -5;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 7px 10px 5px 10px;
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+nav#dot_nav li.active span {
+  opacity: 1;
+  right: 25px;
+}
