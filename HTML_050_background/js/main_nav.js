@@ -32,11 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // art 객체(Dom 객체)의 현재 위치, 모양값을
       // getter 해달라
-      let bound = art.getBoundingClientRect();
+      // prettier-ignore
+      let bound 
+      = art.getBoundingClientRect();
 
       // art 객체(box)의
       // 화면의 위에서부터 좌표값
       let artTop = bound.top;
+
       window.scrollBy({
         top: artTop,
         left: 0,
