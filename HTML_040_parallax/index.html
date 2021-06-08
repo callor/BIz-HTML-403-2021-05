@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SPA(Single Page App)</title>
+    <script
+      src="https://kit.fontawesome.com/58b5d9133d.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        transition: 1s;
       }
 
       li {
@@ -19,19 +24,24 @@
     <link href="css/section.css" rel="stylesheet" />
     <link href="css/main_nav.css" rel="stylesheet" />
     <link href="css/dot_nav.css" rel="stylesheet" />
+    <link href="css/mdeia_nav.css" rel="stylesheet" />
     <script src="js/main_nav.js"></script>
+    <style></style>
   </head>
   <body>
     <nav id="main_nav">
       <h1>I'm Developer</h1>
-      <ul>
-        <li class="art1 active">THINK</li>
-        <li class="art2">RAISE</li>
-        <li class="art3">LIFE</li>
-        <li class="art4">WANT</li>
-        <li class="art5">TIME</li>
-        <li class="art6">DESTINY</li>
-      </ul>
+      <div>
+        <div class="menu_toggle"><i class="fas fa-bars"></i></div>
+        <ul>
+          <li class="art1 active">THINK</li>
+          <li class="art2">RAISE</li>
+          <li class="art3">LIFE</li>
+          <li class="art4">WANT</li>
+          <li class="art5">TIME</li>
+          <li class="art6">DESTINY</li>
+        </ul>
+      </div>
     </nav>
 
     <nav id="dot_nav">

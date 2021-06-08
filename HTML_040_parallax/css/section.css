@@ -62,14 +62,3 @@ article#art5 {
 article#art6 {
   background: url("../images/parallax_06.jpg") no-repeat;
 }
-
-@media screen and (max-width: 1000px) {
-  section#contents {
-    font-size: 50px;
-  }
-}
-@media screen and (max-width: 800px) {
-  section#contents {
-    font-size: 30px;
-  }
-}

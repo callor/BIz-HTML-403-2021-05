@@ -108,4 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 현재 보고 있는 화면이 스크롤되면
   document.addEventListener("scroll", scrollTop_nav_tick);
+
+  document
+    .querySelector("nav#main_nav .fa-bars")
+    .addEventListener("click", (e) => {
+      document.querySelector("nav#main_nav ul").classList.toggle("drop");
+    });
 });
