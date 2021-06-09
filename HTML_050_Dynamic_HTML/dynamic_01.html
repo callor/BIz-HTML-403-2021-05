@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic HTML</title>
+    <style>
+      div {
+        border: 1px solid blue;
+        font-size: 40px;
+        width: 50%;
+        margin: 10px auto;
+      }
+
+      table {
+        width: 50%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        border: 1px solid green;
+      }
+
+      table td {
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const doc = document;
+    let body = doc.querySelector("body");
+
+    // div box tag를 생성하겠다
+    let div = doc.createElement("div");
+    // 생성한 div box에 대한민국 문자열을 추가
+    div.innerHTML = "대한민국";
+    // 만들어진 div를 body에 child로 추가하라
+    body.appendChild(div);
+
+    let cell = doc.createElement("td");
+    let row = doc.createElement("tr");
+    let table = doc.createElement("table");
+
+    let cell1 = doc.createElement("td");
+    cell1.innerHTML = "첫번째";
+    row.appendChild(cell1);
+
+    let cell2 = doc.createElement("td");
+    cell2.innerHTML = "두번째";
+    row.appendChild(cell2);
+
+    let cell3 = doc.createElement("td");
+    cell3.innerHTML = "세번째";
+    row.appendChild(cell3);
+
+    table.appendChild(row);
+
+    body.appendChild(table);
+  </script>
+</html>
