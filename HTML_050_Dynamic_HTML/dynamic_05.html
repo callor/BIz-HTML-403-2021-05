@@ -130,21 +130,22 @@
       console.log(datas.addr);
 
       // 추기하고 싶을때
-      datas.age = 30;
+      // datas.age = 30;
 
       let tr = doc.createElement("tr");
       // js for..in을 사용하면 바로 데이터를 추출
-      for (data in datas) {
+      for (key in datas) {
         let td = doc.createElement("td");
-        td.innerHTML = datas[data];
+        td.innerHTML = datas[key];
         tr.appendChild(td);
       }
       table.appendChild(tr);
 
       // ECMA 2015 이상에서 사용가능한 코드
+
       // let trs = Object.keys(datas).map((key) => {
       //   let td = doc.createElement("td");
-      //   td.innerHTML = datas[data];
+      //   td.innerHTML = datas[key];
       //   tr.appendChild(td);
       //   return tr;
       // });
