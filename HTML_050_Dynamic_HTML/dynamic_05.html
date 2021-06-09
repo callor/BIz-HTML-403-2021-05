@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      p {
+        padding: 5px;
+        width: 80%;
+        margin: 0 auto;
+      }
+      input {
+        width: 80%;
+        padding: 8px;
+        margin: 5px;
+        outline: 0;
+        border: 1px solid greenyellow;
+        border-radius: 5px;
+      }
+      input:hover {
+        background-color: #ccc;
+      }
+
+      button {
+        width: 200px;
+        background-color: green;
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 0; /* top, bottom 만 10px */
+      }
+      button:hover {
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        margin: 10px auto;
+      }
+      table th,
+      td {
+        border: 1px solid green;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <input
+        type="text"
+        name="p_name"
+        id="p_name"
+        placeholder="이름을 입력하세요"
+      />
+    </p>
+    <p>
+      <input
+        type="tel"
+        name="p_tel"
+        id="p_tel"
+        placeholder="전화번호를 입력하세요"
+      />
+    </p>
+    <p>
+      <input
+        type="text"
+        name="p_addr"
+        id="p_addr"
+        placeholder="주소를 입력하세요"
+      />
+    </p>
+    <p><button class="btn_ok">OK</button></p>
+    <table>
+      <tr>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+      </tr>
+    </table>
+  </body>
+  <script>
+    const doc = document;
+
+    const table = doc.querySelector("table");
+
+    doc.querySelector("button.btn_ok").addEventListener("click", (e) => {
+      let p_name = doc.querySelector("input#p_name");
+      let p_tel = doc.querySelector("input#p_tel");
+      let p_addr = doc.querySelector("input#p_addr");
+
+      // prettier-ignore
+      // JSON : JavaScript Object Notaion
+      /*
+       JS에 최초로 제안된 데이터 교환 포멧
+       
+       XML(Exchange Mark Lang.)
+       네트워크를 통해서 다량의 데이터를 서로 교환할때
+       어떻게 하면 빨리, 정확하게 전달하면서
+       기기(System, OS)의 종류에 상관없이 편리하게
+       교환(전달)할수 있을까 라는 고민으로 탄생된 포멧
+
+       JSON(JavaScript Object Notation)
+       XML의 단점 : 포멧의 엄격함, 
+       tag를 포함하여 실제 데이터와 상관없는 값들이 추가
+       key:value pair 방식으로 데이터를 매우 단순화 하고
+       코드내에서는 마치 VO, DTO처럼 사용하면서
+       네티워크를 통해서 전송될때는 아주 단순한 Text로
+       쉽게 변환하여 전송할수 있도록 제안된 규격
+
+      JSON 데이터는 배열데이터와 유사한 방법으로
+      읽기 쓰기 등이 가능한데
+      완전한 배열의 성질이 아닌 상태이다
+      이러한 데이터구조를
+      JS에서는 유사배열 이라고 한다.
+
+      */
+      // 만들때
+      let datas = { 
+              name: p_name.value, 
+              tel: p_tel.value, 
+              addr: p_addr.value 
+      };
+      // 읽을때
+      console.log(datas.name);
+      console.log(datas.tel);
+      console.log(datas.addr);
+
+      // 추기하고 싶을때
+      datas.age = 30;
+
+      let tr = doc.createElement("tr");
+      // js for..in을 사용하면 바로 데이터를 추출
+      for (data in datas) {
+        let td = doc.createElement("td");
+        td.innerHTML = datas[data];
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+
+      // ECMA 2015 이상에서 사용가능한 코드
+      // let trs = Object.keys(datas).map((key) => {
+      //   let td = doc.createElement("td");
+      //   td.innerHTML = datas[data];
+      //   tr.appendChild(td);
+      //   return tr;
+      // });
+      // table.append(trs);
+
+      p_name.value = "";
+      p_tel.value = "";
+      p_addr.value = "";
+    });
+  </script>
+</html>
