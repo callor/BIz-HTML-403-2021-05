@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이드</title>
+    <style>
+      section {
+        width: 500px;
+        height: 500px;
+        margin: 30px auto;
+        position: relative;
+      }
+      div.images {
+        display: flex;
+      }
+
+      div.images img {
+        width: 500px;
+        height: 500px;
+      }
+
+      div.mask {
+        width: 500px;
+        height: 500px;
+        overflow: hidden;
+      }
+
+      article.nav {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+
+        /* 세로방향 중앙에 item을 위치하고자 할때 */
+        /* 절대좌표 위치를 parents의 50% 만큼 아래로 위치하고 */
+        top: 50%;
+        /* 자기 자신의 크기의 50%만큼 후진 */
+        transform: translateY(-50%);
+
+        font-size: 50px;
+        font-weight: 800;
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.5s;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+      }
+      article.nav div:last-child {
+        margin-left: auto;
+      }
+
+      article.nav:hover {
+        opacity: 1;
+      }
+      article.nav div:hover {
+        color: blue;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const IMAGE_WIDTH = 500;
+        const images = document.querySelector("div.images");
+        let position = 0;
+        const prev = () => {
+          position += IMAGE_WIDTH * -1;
+          console.log(images);
+          images.style.transform = `translateX(${position}px)`;
+        };
+
+        document.querySelector("article.nav").addEventListener("click", (e) => {
+          let tag = e.target;
+          if (tag.tagName === "DIV") {
+            if (tag.innerText === "<") {
+              // alert("앞으로");
+              prev();
+            } else if (tag.innerText === ">") {
+              alert("뒤로");
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="mask">
+        <div class="images">
+          <img src="images_2.jpg" />
+          <img src="images_3.jpg" />
+          <img src="images_4.jpg" />
+          <img src="images_5.jpg" />
+          <img src="images_6.jpg" />
+        </div>
+      </div>
+      <article class="nav">
+        <div>&lt;</div>
+        <div>&gt;</div>
+      </article>
+    </section>
+  </body>
+</html>
