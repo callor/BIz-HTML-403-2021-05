@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션</title>
+    <style>
+      div {
+        background-color: blue;
+        width: 500px;
+        height: 500px;
+      }
+      @keyframes div_moping {
+        0% {
+          background-color: blue;
+          border-radius: 0;
+          transform: translateX(0) rotate(0);
+        }
+
+        100% {
+          background-color: red;
+          border-radius: 50%;
+          transform: translateX(900px) rotate(180deg);
+        }
+      }
+      div {
+        animation: div_moping 3s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

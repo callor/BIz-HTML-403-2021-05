@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>image slide</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* 이 페이지에서 사용할 애니메이션을 선언 */
+      /* 왼쪽 방향으로 5px 만큼씩 이동하는 애니메이션 */
+      @keyframes myslide {
+        /* 키프레임 시작점 */
+        0% {
+          /* 현재 모양에서 */
+          transform: translateX(0);
+        }
+        /* 키프레임 종료점 */
+        100% {
+          /* 왼쪽 방향으로 tag를 이동하라 */
+          transform: translateX(calc(-500px * 5));
+        }
+      }
+
+      div.main {
+        width: 500px;
+        height: 500px;
+        border: 1px solid green;
+        margin: 20px auto;
+      }
+
+      div.main div.mask {
+        border: 1px solid blue;
+        height: 500px;
+        /* 
+        감싸고 있는 이미지들이 화면에서 넘치는 
+        현상이 발생했는데 이 box 만큼만 보여주고
+        나머지는 모두 보이지 않도록 하라
+        */
+        overflow: hidden;
+      }
+
+      div.main div.images {
+        width: 500px;
+        border: 1px solid red;
+        display: flex;
+
+        animation: myslide 20s linear infinite;
+      }
+
+      div.main div.images img {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="mask">
+        <div class="images">
+          <img src="images_2.jpg" />
+          <img src="images_3.jpg" />
+          <img src="images_4.jpg" />
+          <img src="images_5.jpg" />
+          <img src="images_6.jpg" />
+
+          <img src="images_2.jpg" />
+          <img src="images_3.jpg" />
+          <img src="images_4.jpg" />
+          <img src="images_5.jpg" />
+          <img src="images_6.jpg" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
