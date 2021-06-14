@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      div.main {
+        width: 500px;
+        margin: 50px auto;
+        padding: 10px;
+        border: 1px solid green;
+      }
+
+      div.main div {
+        width: 80%;
+        padding: 3rem;
+        margin: 5px;
+        border: 1px solid blue;
+      }
+
+      /* 
+      position을 fixed로 설정하면
+      view port내에서 절대값 좌표를 지정하여 위치를 지정할수 있다
+      */
+      div.main div:nth-of-type(1) {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+      }
+
+      /*
+      모든 block 형 tag는 감춰진 postion속성이 있는데
+      기본값이 모두 relative이다
+      block형 tag를 나열하면 순서에 따라 위에서
+      아래로 배치가 된다
+      */
+      div.main {
+        position: relative;
+      }
+      /*
+      block(div.main) 이 
+      block(div.main div)를 감싸고 있을때
+      내부 block(child block:div.main div)을 
+      외부블럭(parents block : div.main)에 대하여
+      외부블럭 범위내에서 절대적인 위치를 저장하고자 할때
+      position:absolute를 사용한다
+
+      내부블럭에서 position:absolute를 사용할때
+      parents block에 position이 없으면
+      absolute되는 기준이 body가 되거나
+      또는 parents 를 감싸고있는 다른 상위 block에
+      position이 지정되어 있으면 그 block를 기준으로 배치된다
+
+      나를 감싸고 있는 parents block에 대하여
+      absolute를 설정하고 싶으면
+      parents Block에 반드시 position:relative를 설정해
+      주어야 한다.
+      */
+      div.main div:nth-of-type(2) {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+    </div>
+    <style>
+      div.rel {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border: 1px solid green;
+        margin: 0 auto;
+      }
+
+      div.rel div {
+        width: 50%;
+        border: 1px solid red;
+        padding: 10px;
+        position: absolute;
+      }
+
+      div.rel div:nth-of-type(1) {
+        top: 0;
+      }
+
+      div.rel div:nth-of-type(2) {
+        bottom: 0;
+      }
+
+      div.rel div:nth-of-type(3) {
+        top: 50px;
+        left: 0;
+      }
+      div.rel div:nth-of-type(4) {
+        bottom: 50px;
+        right: 0;
+      }
+      div.rel div:nth-of-type(4) {
+        bottom: 50px;
+        right: 0;
+        left: 0;
+      }
+    </style>
+
+    <div class="rel">
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+      <div>div4</div>
+      <div>div5</div>
+    </div>
+  </body>
+</html>
