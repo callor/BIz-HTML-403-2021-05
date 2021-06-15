@@ -80,10 +80,18 @@
       }
 
       section#main {
+        /*
+        full screen을 구현하기위해
+        */
         flex: auto;
         border: 1px solid red;
         font-size: 40px;
         display: flex;
+        /*
+        내부에 포함된 article에 scroll 기능을 부여하기 위해
+        부모의 height를 0으로 설정
+        */
+        height: 0;
       }
 
       section#main aside {
@@ -93,16 +101,25 @@
       section#main article {
         flex: auto;
         border: 1px solid blue;
-        height: 70vh;
         overflow: auto;
 
-        /* 
+        /*
         CSS3 에 실험적인 속성
         */
         -ms-overflow-style: none;
       }
       section#main article::-webkit-scrollbar {
-        display: none;
+        width: 0;
+      }
+
+      /* scroll bar 전체 */
+      section#main article:hover::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* : 스크롤 막대 */
+      section#main article:hover::-webkit-scrollbar-thumb {
+        background-color: blue;
       }
 
       section#main article p {
