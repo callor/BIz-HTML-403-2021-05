@@ -17,35 +17,33 @@
         height: 500px;
         border: 1px solid blue;
       }
+      div.ticker {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        overflow: hidden;
+      }
+      /*
+      max-width : 최대 이 크기를 벗어나지마라
+      min-width : 최소한 이 크기를 유지하라
+      */
+      div.image {
+        min-width: 200px;
+        height: 90%;
+        border-radius: 10px;
+        margin: 3px;
+      }
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // js 빈(blank) 배열 선언
         let images = [];
         for (let i = 0; i < 10; i++) {
-          // Math.randon() : 0 ~ 1미만의 난수 실수를 생성
-          // Math.floor() : 소수점 이하를 잘라 정수로
-
-          // Math.floor(Math.random() * (max - min))  + min
-          //  min 부터 max 미만의 정수를 생성하는 코드
-
-          // Math.floor(Math.random() * (max - min + 1)) + min
-          //  min 부터 max(포함) 까지의 정수를 생성하는 코드
-          // 1 ~ 7까지의 정수 생성
           let imgNum = Math.floor(Math.random() * (7 - 1 + 1)) + 1;
-
-          // 1 ~ 7까지 생성된 난수를 사용하여 이미지파일명
-          // 만들기
           let img_src = `images_${imgNum}.jpg`;
           console.log(img_src);
-
-          // 만들어진 파일명을 배열에 추가
           images.push(img_src);
         }
         console.log("이미지 배열", images);
-
-        // js의 배열을 순회하는 다양한 forEach의 확장 중의
-        // 한가지인 map() 함수
         let imageBox = images.map((value, key) => {
           console.log(key, value);
           let div = document.createElement("div");

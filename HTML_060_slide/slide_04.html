@@ -13,11 +13,24 @@
         position: relative;
       }
 
+      div.images {
+        display: flex;
+        transition: 1s;
+      }
       div.images img {
         width: 500px;
         height: 500px;
       }
 
+      /*
+      실제 전체이미지는 여러개의 이미지가 나열되어
+      상당히 width가 큰 상태이다
+      이미지 리스트중에서 mask box만큼만 보여주도록 하기 위하여
+      mask Box의 overflow를 hidden을 하였다
+
+      실제 보여지는 1개의 이미지의 크기는
+      mask box의 width, height라고 봐도 된다
+      */
       div.mask {
         width: 500px;
         height: 500px;
@@ -57,24 +70,62 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        const image = document.querySelector("div.images");
+
+        // 이미지 개개별로 모두 가져오기
+        // images는 img tag들 정보를 담는 배열이 생성
+        const images = document.querySelectorAll("div.images img");
+        const IMAGE_COUNT = images.length;
         const IMAGE_WIDTH = 500;
-        const images = document.querySelector("div.images");
-        let position = IMAGE_WIDTH;
+        let position = 0;
+
         const prev = () => {
+          // 현재 보이는 이미지가 맨 오른쪽 끝 이미지인지
+          // 위치값을 검사하여
+          // IMAGE_WIDTH * IMAGE_COUNT 는 전체 이미지의 가로 폭이된다
+          // IMAGE_WIDTH * (IMAGE_COUNT - 1) 제일 마지막 이미지의
+          //    왼쪽 라인의 좌표가 된다
+          // 그 좌표에 -1을 곱하여 현재 position의 값과 비교해 본다
+
+          console.log(position);
+          if (position <= IMAGE_WIDTH * ((IMAGE_COUNT - 1) * -1)) {
+            position = IMAGE_WIDTH;
+          }
+
+          // 이미지(mask box)의 width만큼 position값을
+          // 감소시키기
           position += IMAGE_WIDTH * -1;
-          console.log(images);
-          images.style.transform = `translateX(${position})`;
+
+          // margin-left를 -로 설정하여 이미지 왼쪽으로 이동
+          // margin-left는 JS는 camel case 로 사용
+          // 중간의 -를 제거하고 - 다음 글자를 대문자로
+          // image.style.marginLeft = position + "px";
+
+          // margin-left를 이동하는 것보다
+          // CSS3에서는 transform을 사용하자
+          // image.style.transform = "translateX(" + position + "px)";
+          // js에서는 문자열 + 문자열 ... 등의 연산 대신에
+          // Backtit을 사용하여 문자열 완성 연산을 수행하자
+          image.style.transform = `translateX(${position}px)`;
+        }; // end prev
+
+        const next = () => {
+          console.log(position);
+          if (position >= 0) {
+            position = IMAGE_WIDTH * IMAGE_COUNT * -1;
+          }
+          position += IMAGE_WIDTH;
+          console.log(position);
+          image.style.transform = `translateX(${position}px)`;
         };
 
         document.querySelector("article.nav").addEventListener("click", (e) => {
-          let tag = e.target;
-          if (tag.tagName === "DIV") {
-            if (tag.innerText === "<") {
-              // alert("앞으로");
-              prev();
-            } else if (tag.innerText === ">") {
-              alert("뒤로");
-            }
+          let text = e.target.innerHTML;
+
+          if (text === "<" || text === "&lt;") {
+            prev();
+          } else if (text === ">" || text === "&gt;") {
+            next();
           }
         });
       });
