@@ -68,6 +68,11 @@
           console.log(images);
           images.style.transform = `translateX(${position}px)`;
         };
+        const next = () => {
+          position += IMAGE_WIDTH;
+          console.log(images);
+          images.style.transform = `translateX(${position}px)`;
+        };
 
         document.querySelector("article.nav").addEventListener("click", (e) => {
           let tag = e.target;
@@ -76,7 +81,8 @@
               // alert("앞으로");
               prev();
             } else if (tag.innerText === ">") {
-              alert("뒤로");
+              // alert("뒤로");
+              next();
             }
           }
         });
