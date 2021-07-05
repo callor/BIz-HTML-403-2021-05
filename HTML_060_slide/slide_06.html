@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      div.main {
+        width: 500px;
+        height: 600px;
+        margin: 10px auto;
+        border: 1px solid green;
+      }
+      div.view {
+        width: 100%;
+        height: 500px;
+        border: 1px solid blue;
+      }
+      div.ticker {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        overflow: hidden;
+      }
+      /*
+      max-width : 최대 이 크기를 벗어나지마라
+      min-width : 최소한 이 크기를 유지하라
+      */
+      div.image {
+        min-width: 200px;
+        height: 90%;
+        border-radius: 10px;
+        margin: 3px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let images = [];
+        for (let i = 0; i < 10; i++) {
+          let imgNum = Math.floor(Math.random() * (7 - 1 + 1)) + 1;
+          let img_src = `images_${imgNum}.jpg`;
+          console.log(img_src);
+          images.push(img_src);
+        }
+        console.log("이미지 배열", images);
+        let imageBox = images.map((value, key) => {
+          console.log(key, value);
+          let div = document.createElement("div");
+          div.style.background = `url('${value}') no-repeat`;
+          div.style.backgroundSize = `100% 100%`;
+          div.classList.add("image");
+          return div;
+        });
+        document.querySelector("div.main div.ticker").append(...imageBox);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="view"></div>
+      <div class="ticker"></div>
+    </div>
+  </body>
+</html>
