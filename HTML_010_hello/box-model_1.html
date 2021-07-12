@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /*
+        html, css의 box model
+        display block으로 설정된 tag들은 box의 성질을 갖고 있다
+        일부 box들은 Content, padding이 설정되지 않으면
+        box의 형태가 없는 것처럼 보이기도 한다
+        */
+      div {
+        border: 1px solid blue;
+        width: 50%;
+        margin: 5px auto;
+      }
+
+      /*
+      기본 box model에서 padding을 설정하면 
+      padding만큼 box가 바깥쪽으로 커지는 현상이 있다
+      */
+      div:nth-of-type(2) {
+        padding: 10px;
+      }
+
+      /*
+      기본 box model에서 border의 굵기를 설정하면
+      border의 굵기만큼 box가 바깥쪽으로 커지는 현상이 있다
+      */
+      div:nth-of-type(3) {
+        border: 10px solid red;
+      }
+
+      /*
+      nth-of-type(), nth-child()
+      이 두가지 가상 클래스는 함수처럼 작동이된다
+      특정한 tag를 위치적, 순번적으로 선택하고자 할때 사용한다
+      이 함수에는 n 이라고 하는 기본 상수값이 존재한다
+      이 n 상수값을 사용하여 연산(+, *)을 수행하여 다수의 tag를 선택할수 있도록
+      하기도 한다
+      n + 3 : n 은 첫번째 요소를 가리키고, 
+            + 3은 이후에 4번째(n + 3) 이후의 모든 요소에 대하여 style 적용
+      */
+      div:nth-of-type(n + 3) {
+        padding: 10px;
+      }
+
+      /*
+      box model을 border-box 형태로 변경하기
+      box-sizing 속성을 border-box로 설정하면
+      모든 box의 좌우 기준이 일정하게 정렬된다
+      width에만 반영이 되고 bordre-size, padding등을 적용하면
+      box가 내부 방향으로 줄어드는 모양이 된다
+      */
+      div:nth-of-type(n + 5) {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div></div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+  </body>
+</html>

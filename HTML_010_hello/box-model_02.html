@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      div.main {
+        padding: 10px;
+        display: flex;
+        border: 1px solid blue;
+      }
+
+      div.main div {
+        flex: 1;
+        border: 1px solid red;
+      }
+
+      /*
+      box의 display를 none으로 설정하면
+      box 자체가 없는것으로 취급된다
+      */
+      div.main div:nth-of-type(2) {
+        display: none;
+        transition: 1s;
+      }
+
+      /*
+      visiblity를 hidden으로 하면 box를 감추기는 하지만
+      원래 box가 차지하는 공간은 그대로 남겨둔다
+      */
+      div.main div:nth-of-type(4) {
+        visibility: hidden;
+        transition: 1s;
+        width: 0px;
+      }
+
+      /*
+      selector1 + selector2
+      selector1의 형제인 selector2에 대하여
+
+      */
+      div.main div:nth-of-type(1):hover + div:nth-of-type(2) {
+        display: block;
+        box-shadow: 0 1000px 0 0 #aaa inset;
+      }
+
+      /*
+      transition을 설정하여 간단한 animation을 구현하려고 할때
+      display를 none인 상태에서 block으로 변화를 시키면
+      어떠한 속성도 transition 적용되지 않는다.
+
+      간단한 animation 을 적용하려면 가급적
+      visibility를 사용하고 width, height를 적용하여
+      box model을 만드는 것이 유리하다
+      */
+      div.main div:nth-of-type(3):hover + div:nth-of-type(4) {
+        visibility: visible;
+        box-shadow: 1000px 0 0 0 #aaa inset;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </body>
+</html>
