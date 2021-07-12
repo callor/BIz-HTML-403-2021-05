@@ -15,6 +15,7 @@
       nav li {
         width: 200px;
         list-style: none;
+        cursor: pointer;
       }
 
       nav.top_nav {
@@ -30,6 +31,7 @@
         color: white;
         padding: 12px 16px;
         border-bottom: 3px solid transparent;
+        transition: 0.5s;
       }
 
       nav.top_nav li:nth-of-type(4) {
@@ -37,7 +39,8 @@
       }
 
       nav.top_nav li:hover {
-        border-bottom: 3px solid yellow;
+        border-bottom: 3px solid green;
+        background-color: #aaa;
       }
 
       nav.sub_nav {
@@ -64,14 +67,12 @@
       }
 
       nav.sub_nav {
-        visibility: hidden;
         height: 0;
         opacity: 0;
         transition: ease-out 1s;
       }
 
       section.nav_box:hover nav.sub_nav {
-        visibility: visible;
         height: 100%;
         opacity: 1;
       }
