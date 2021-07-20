@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <table id="books">
+      <c:forEach items="BOOKS" var="BOOK">
+        <tr class="MYTR">
+          <td class="ch-td ch-isbn">${BOOK.isbn}</td>
+          <td class="ch-td ch-book">${BOOK.isbn}</td>
+          <td class="ch-td ch-name">${BOOK.isbn}</td>
+        </tr>
+      </c:forEach>
+    </table>
+  </body>
+  <script>
+    let trs = document.querySelectorAll("tr.MYTR");
+    for (let i = 0; i < trs.length; i++) {
+      trs[i].addEventListener("click", () => {});
+    }
+
+    let tablesBook = document.querySelector("table#books");
+    if (tablesBook) {
+      tableBook.addEventListener("click", (e) => {
+        let td = e.target;
+        if (td.tagName === "TD") {
+          ///
+        }
+      });
+    }
+  </script>
+</html>
